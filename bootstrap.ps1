@@ -14,6 +14,10 @@ portable tools at it so nightly restore skips the ~350 MB VS Code re-download:
 #>
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+# The repo (and restore.ps1) arrive downloaded, so they carry the "from the internet"
+# zone tag. A fresh VDI is often at Restricted/RemoteSigned, which would block running
+# restore.ps1 directly. Bypass for this process only (no admin, not persisted).
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 
 $repoZip = 'https://github.com/MariusDinita/dev-environment-vdi/archive/refs/heads/main.zip'
 $tmp     = Join-Path $env:TEMP ('devenv-' + [guid]::NewGuid().ToString('N'))
