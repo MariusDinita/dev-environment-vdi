@@ -1,0 +1,5 @@
+# nothing here should be secret, but keep stray artifacts out
+*.zip
+*.log
+Thumbs.db
+.DS_Store

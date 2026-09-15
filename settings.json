@@ -1,0 +1,164 @@
+{
+  // ------ font settings ------
+  "editor.fontSize": 13,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', monospace",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "github.copilot.selectedCompletionModel": "",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.enable": {
+    "markdown": true
+  },
+  "editor.formatOnSave": true,
+  "diffEditor.renderSideBySide": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vim.leader": "<Space>",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "editor.lineNumbers": "relative",
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<Tab>": false,
+    "<C-k>": false,
+    "<C-e>": false,
+    "<C-l>": false,
+    "<C-n>": false,
+    "<C-i>": false,
+    "<C-b>": false
+  },
+  "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<Esc>"] }],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // remapping j and k for UP and DOWN - not working with delete lines or yanking
+    // { "before": ["j"], "after": ["<Up>"] },
+    // { "before": ["k"], "after": ["<Down>"] },
+    // switch b/w buffers
+    { "before": ["S-h"], "commands": [":bprevious"] },
+    { "before": ["S-l"], "commands": [":bnext"] },
+    // split window - horizontal and vertical
+    { "before": ["<leader>", "s"], "commands": [":split"] },
+    { "before": ["<leader>", "v"], "commands": [":vsplit"] },
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    // file tree
+    {
+      "before": ["<leader>", "n", "e"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    // Search for files
+    { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
+    // Search in file
+    { "before": ["<leader>", "t", "f"], "commands": ["actions.find"] }
+    // { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    // save file
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Same here, remapping j and k for UP and DOWN - not working with delete lines or yanking
+    // { "before": ["j"], "after": ["k"] },
+    // { "before": ["k"], "after": ["j"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      // copy to clipboard
+      "before": ["<leader>", "y"],
+      "commands": ["editor.action.clipboardCopyAction", "extension.vim_escape"]
+    },
+    {
+      // delete to void
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      // paste over
+      "before": ["<leader>", "p"],
+      "after": ["\"", "_", "d", "P"]
+    }
+  ],
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.svg": "default"
+  },
+  "turboConsoleLog.logMessagePrefix": "",
+  "turboConsoleLog.includeFilename": true,
+  "turboConsoleLog.insertEmptyLineAfterLogMessage": true,
+  "turboConsoleLog.includeLineNum": true,
+  // ------ explorer indendation in vscode
+  "workbench.tree.indent": 11,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorTheme": "Dracula Theme",
+  "remote.SSH.remotePlatform": {
+    "e2gpu2TR01p": "linux"
+  }
+  // ------
+}
