@@ -52,8 +52,9 @@ git clone https://github.com/MariusDinita/dev-environment-vdi
 bash dev-environment-vdi/linux/restore.sh
 ```
 
-`linux/restore.sh` backs up any existing `.bashrc`/`.tmux.conf` first, then copies the repo's
-versions into `~`.
+`linux/restore.sh` backs up any existing `.bashrc`/`.tmux.conf` first, copies the repo's versions
+into `~`, then installs the tmux plugins (TPM, tmux-resurrect, tmux-continuum) declared in your
+`.tmux.conf`. Needs git + internet for the plugin step; install tmux itself on the box first.
 
 > This repo is public so the Windows one-liner stays passwordless. Keep it that way, and don't
 > commit secrets or tokens into any file here.
