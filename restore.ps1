@@ -31,7 +31,8 @@ param(
   [string]$RepoDir   = $PSScriptRoot,
   [string]$Root      = $env:DEVENV_ROOT,
   [string]$VsCodeUrl = 'https://update.code.visualstudio.com/latest/win32-x64-archive/stable',
-  [switch]$Force
+  [switch]$Force,
+  [switch]$SkipSsh
 )
 
 if (-not $Root) { $Root = Join-Path $env:USERPROFILE 'dev-tools' }
@@ -139,6 +140,19 @@ try {
   Write-Host ('Desktop shortcut : ' + $lnk.Path)
 } catch {
   Write-Host ('(skipped desktop shortcut: ' + $_.Exception.Message + ')')
+}
+
+# --- SSH key + config setup (interactive, opt-in) ---
+# The private key never goes in this (public) repo, so this step stays a manual paste.
+Write-Host ''
+if (-not $SkipSsh) {
+  $ans = Read-Host 'Set up your SSH key + config now? [Y/n]'
+  if ($ans -eq '' -or $ans -match '^[Yy]') {
+    $ssh = Join-Path $RepoDir 'ssh-setup.ps1'
+    if (Test-Path $ssh) { & $ssh } else { Write-Host 'ssh-setup.ps1 not found in this copy; skipping.' }
+  } else {
+    Write-Host 'Skipped SSH setup (run .\ssh-setup.ps1 anytime to do it).'
+  }
 }
 
 Write-Host ''

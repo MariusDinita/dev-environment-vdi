@@ -20,6 +20,8 @@ What it does:
 4. Copies `settings.json` and `keybindings.json` into VS Code's user folder (`%APPDATA%\Code\User`).
 5. Installs every extension in `extensions.txt`.
 6. Creates a Desktop shortcut for VS Code.
+7. Offers to set up your SSH key + config (the interactive Notepad step). Press Enter to do it,
+   `n` to skip; add `-SkipSsh` to the run to skip the prompt entirely.
 
 If you have a persistent drive that survives the reset, point the tools there so restore skips
 the big VS Code re-download:
