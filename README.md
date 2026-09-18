@@ -64,6 +64,7 @@ into `~`, then installs the tmux plugins (TPM, tmux-resurrect, tmux-continuum) d
 - `bootstrap.ps1` — the one-liner entry point.
 - `restore.ps1` — does the actual rebuilding.
 - `export.ps1` — captures live VS Code config back into this repo.
+- `ssh-setup.ps1` — interactive helper to set up an SSH key pair + config in `%USERPROFILE%\.ssh` (two Notepad pastes). Run as a file, don't paste the block.
 - `settings.json` — VS Code user settings.
 - `keybindings.json` — VS Code keybindings.
 - `extensions.txt` — one extension id per line.
